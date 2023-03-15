@@ -11,7 +11,7 @@ L223 "private void loadFile() {". : Incorrect code conventions for function name
 
 
 
-L60 "setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);".
+L60 "setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);". : affect the behavior of the program when it is run
 
 L143 "public void actionPerformed(ActionEvent e) {".
 
