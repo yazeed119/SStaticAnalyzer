@@ -5,7 +5,11 @@ Issues Categories:
 
 a- critical:
 
-L223 "private void loadFile() {".
+L223 "private void loadFile() {". : Incorrect code conventions for function names can make the code less readable and harder to understand for other developers.
+
+
+
+
 
 L60 "setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);".
 
