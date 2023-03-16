@@ -9,12 +9,11 @@ import java.awt.event.KeyEvent;
 import java.io.*;
 
 
-
-@SuppressWarnings("serial")
-
 public class Editor extends JFrame implements ActionListener, DocumentListener {
 
-
+    public static  void main(String[] args) {
+        new Editor();
+    }
     private static final int WINDOW_WIDTH = 500;
     private static final int WINDOW_HEIGHT = 500;
     private static final int APPROVE_OPTION = 0;
@@ -23,10 +22,13 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
     private static final int MESSAGE_WARNING = 2;
     private static final int OPTION_TYPE = 0;
     private static final int NO_OPTION = 1;
-    private JEditorPane textPane;
-    private JMenuBar menubar;
+    JEditorPane textPane;
+    private final JMenuBar menubar;
     private boolean isChanged = false;
+
     private File file;
+
+
 
 
 
@@ -128,11 +130,11 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
     }
 
     private void selectAllText(JMenu edit) {
-        JMenuItem  sall = new JMenuItem("Select All");
-        sall.setMnemonic('A');
-        sall.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_DOWN_MASK));
-        sall.addActionListener(this);
-        edit.add(sall);
+        JMenuItem  small = new JMenuItem("Select All");
+        small.setMnemonic('A');
+        small.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_DOWN_MASK));
+        small.addActionListener(this);
+        edit.add(small);
     }
     private void buildEditMenu() {
         JMenu edit = new JMenu("Edit");
@@ -150,8 +152,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
     private void saveFile() {
         if (isChanged) {
             int ans = JOptionPane.showConfirmDialog(null,
-                    "The file has changed. You want to save it?", "Save file",
-                    OPTION_TYPE, MESSAGE_WARNING);
+                    "The file has changed. You want to save it?", "Save file", OPTION_TYPE, MESSAGE_WARNING);
             if (ans == NO_OPTION) {
                 return;
             }
@@ -166,7 +167,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
                 ex.printStackTrace();
             }
 
-            try (PrintWriter writer = new PrintWriter(file);) {
+            try (PrintWriter writer = new PrintWriter(file)) {
                 if (!file.canWrite())
                     throw new IOException("Cannot write file!");
                 writer.write(text);
@@ -228,7 +229,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
     {
         StringBuilder builder = new StringBuilder();
         try (FileReader fileReader = new FileReader(file);
-             BufferedReader reader = new BufferedReader(fileReader);) {
+             BufferedReader reader = new BufferedReader(fileReader)) {
             String line;
             while ((line = reader.readLine()) != null) {
                 builder.append(line + "\n");
@@ -272,7 +273,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
         if (result != APPROVE_OPTION)
             return;
         file = dialog.getSelectedFile();
-        try (PrintWriter writer = new PrintWriter(file);) {
+        try (PrintWriter writer = new PrintWriter(file)) {
             writer.write(textPane.getText());
             isChanged = false;
             setTitle("Editor - " + file.getName());
