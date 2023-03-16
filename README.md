@@ -101,9 +101,9 @@ L294 "PrintWriter writer = getWriter(file);
       		writer.write(TP.getText());".
                   
 
-###Issues Categories:
-##1- Code Smell:
-#A- Cretical:
+# Issues Categories:
+## 1- Code Smell:
+### A- Cretical:
 
 ```
 	private void saveAsText(String dialogTitle) throws EditorSaveAsException {
