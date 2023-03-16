@@ -8,7 +8,7 @@
 ![image](https://user-images.githubusercontent.com/94912770/225722528-b93a5a65-8898-4a8e-ac59-64f31e7dbd74.png)
 
 
-# Issues Categories:
+# 2- Issues Categories:
 ## 1- Code Smell:
 ### A- Major:
 
