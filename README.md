@@ -4,6 +4,9 @@
 	 
 ## 1- list all problems in the application:	 
 ![image](https://user-images.githubusercontent.com/94912770/225721958-0787f143-b51b-483a-84f8-3cba2aef4d28.png)
+![image](https://user-images.githubusercontent.com/94912770/225722422-16f7be06-012b-424f-a585-7dc87da8bbe0.png)
+![image](https://user-images.githubusercontent.com/94912770/225722528-b93a5a65-8898-4a8e-ac59-64f31e7dbd74.png)
+
 
 # Issues Categories:
 ## 1- Code Smell:
