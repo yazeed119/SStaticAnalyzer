@@ -28,10 +28,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
 
     private File file;
 
-
-
-
-
+    //yaz
     public Editor() {
         super("Text Editor");
         textPane = new JEditorPane();
@@ -44,12 +41,13 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
-
+ //shahd
     private void buildMenu() {
         buildFileMenu();
         buildEditMenu();
     }
 
+    //shahd
     private void newFile(JMenu file) {
         JMenuItem newFile = new JMenuItem("New");
         newFile.setMnemonic('N');
@@ -57,6 +55,8 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
         newFile.addActionListener(this);
         file.add(newFile);
     }
+
+    //narjes
     private void openFile(JMenu file) {
         JMenuItem open = new JMenuItem("Open");
         file.add(open);
@@ -65,6 +65,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
         open.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, InputEvent.CTRL_DOWN_MASK));
     }
 
+    //yaz
     private void saveText(JMenu file) {
         JMenuItem save = new JMenuItem("Save");
         file.add(save);
@@ -72,6 +73,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
         save.addActionListener(this);
         save.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK));
     }
+    //shahd
     private void saveAs(JMenu file) {
         JMenuItem saves =
                 new JMenuItem("Save as:");
@@ -79,6 +81,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
         saves.addActionListener(this);
 
     }
+    //narjes
     private void quitApplication(JMenu file) {
         JMenuItem quit = new JMenuItem("Quit");
         file.add(quit);
@@ -86,7 +89,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
         quit.setMnemonic('Q');
         quit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_DOWN_MASK));
     }
-
+    //yazeed
     private void buildFileMenu() {
         JMenu keyfile = new JMenu("File");
         keyfile.setMnemonic('F');
@@ -98,7 +101,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
         quitApplication(keyfile);
 
     }
-
+    //shahd
     private void cutText(JMenu edit) {
         JMenuItem  cut = new JMenuItem("Cut");
         cut.addActionListener(this);
@@ -106,6 +109,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
         cut.setMnemonic('T');
         edit.add(cut);
     }
+    //narjes
     private void copyText(JMenu edit) {
         JMenuItem copy = new JMenuItem("Copy");
         copy.addActionListener(this);
@@ -114,6 +118,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
         edit.add(copy);
     }
 
+    //yaz
     private void findText(JMenu edit) {
         JMenuItem find = new JMenuItem("Find");
         find.setMnemonic('F');
@@ -121,6 +126,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
         edit.add(find);
         find.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F, InputEvent.CTRL_DOWN_MASK));
     }
+    //shahd
     private void pasteText(JMenu edit) {
         JMenuItem  paste = new JMenuItem("Paste");
         paste.setMnemonic('P');
@@ -129,6 +135,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
         paste.addActionListener(this);
     }
 
+    //narjes
     private void selectAllText(JMenu edit) {
         JMenuItem  small = new JMenuItem("Select All");
         small.setMnemonic('A');
@@ -136,6 +143,8 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
         small.addActionListener(this);
         edit.add(small);
     }
+
+    //yaz
     private void buildEditMenu() {
         JMenu edit = new JMenu("Edit");
         menubar.add(edit);
@@ -148,7 +157,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
 
     }
 
-
+//shahd
     private void saveFile() {
         if (isChanged) {
             int ans = JOptionPane.showConfirmDialog(null,
@@ -177,7 +186,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
             }
         }
     }
-
+//narjes
     private void newFile(){
         if(isChanged)
             saveFile();
@@ -187,7 +196,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
         setTitle("Editor");
 
     }
-
+//yaz
     @Override
     public void actionPerformed(ActionEvent e) {
         String action = e.getActionCommand();
@@ -224,7 +233,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
             default:
         }
     }
-
+//shahd
     private  String readFile(File file)
     {
         StringBuilder builder = new StringBuilder();
@@ -240,8 +249,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
         }
         return builder.toString();
     }
-
-
+    //narjes
     private void loadFile() {
         JFileChooser dialog = new JFileChooser(System.getProperty("user.home"));
         dialog.setMultiSelectionEnabled(false);
@@ -264,8 +272,7 @@ public class Editor extends JFrame implements ActionListener, DocumentListener {
             JOptionPane.showMessageDialog(null, error, "Error", MESSAGE_ERROR);
         }
     }
-
-
+//yaz
     private void saveAs(String dialogTitle) {
         JFileChooser dialog = new JFileChooser(System.getProperty("user.home"));
         dialog.setDialogTitle(dialogTitle);

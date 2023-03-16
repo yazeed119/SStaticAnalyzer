@@ -18,6 +18,7 @@ import javax.swing.JTextField;
 @SuppressWarnings("serial")
 public class FindDialog extends JDialog implements ActionListener, KeyListener {
 
+    //narjes
     private transient Editor parents;
     JLabel label;
     JTextField textField;
@@ -26,6 +27,8 @@ public class FindDialog extends JDialog implements ActionListener, KeyListener {
     JButton close;
     boolean finishedFinding = true;
     private transient Matcher matcher;
+
+    //shahd
     public FindDialog(Editor parent, boolean modal) {
         super(parent, modal);
         this.parents = parent;
@@ -41,6 +44,7 @@ public class FindDialog extends JDialog implements ActionListener, KeyListener {
         setVisible(true);
     }
 
+    //yazeed
     private void initComponents() {
         setLayout(new GridLayout(3, 1));
         JPanel panel1 = new JPanel();
@@ -68,7 +72,7 @@ public class FindDialog extends JDialog implements ActionListener, KeyListener {
         close.addKeyListener(this);
         caseSensitive.addKeyListener(this);
     }
-
+//narjes
     private void find(String pattern) {
         if (!finishedFinding) {
             if (matcher.find()) {
@@ -88,7 +92,7 @@ public class FindDialog extends JDialog implements ActionListener, KeyListener {
             find(pattern);
         }
     }
-
+//shahd
     @Override
     public void actionPerformed(ActionEvent e) {
         String cmd = e.getActionCommand();
@@ -104,7 +108,7 @@ public class FindDialog extends JDialog implements ActionListener, KeyListener {
             closeDialog();
         }
     }
-
+//yazeed
     private void closeDialog() {
         setVisible(false);
         dispose();
@@ -125,7 +129,5 @@ public class FindDialog extends JDialog implements ActionListener, KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
         // default implementation ignored
-
     }
-
 }
