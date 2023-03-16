@@ -1,5 +1,9 @@
 # SStaticAnalyzer
-                  
+         
+	 
+	 
+## 1- list all problems in the application:	 
+![image](https://user-images.githubusercontent.com/94912770/225721958-0787f143-b51b-483a-84f8-3cba2aef4d28.png)
 
 # Issues Categories:
 ## 1- Code Smell:
