@@ -103,8 +103,7 @@ L294 "PrintWriter writer = getWriter(file);
 
 
 
-
-'''
+```
 	private void saveAsText(String dialogTitle) throws EditorSaveAsException {
 		JFileChooser dialog = new JFileChooser(System.getProperty("user.home"));
 		dialog.setDialogTitle(dialogTitle);
@@ -119,5 +118,5 @@ L294 "PrintWriter writer = getWriter(file);
 		} catch (FileNotFoundException e) {
 			throw new EditorSaveAsException(e.getMessage());
 		}
-	}
-'''	
+	}	
+```
