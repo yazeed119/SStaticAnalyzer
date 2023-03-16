@@ -15,11 +15,15 @@ L60 "setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);". : affect the behavior of 
 
 L143 "public void actionPerformed(ActionEvent e) {".
 
-L154 "ans = JOptionPane.showConfirmDialog(null, "The file has changed. You want to save it?", "Save file", 0, 2);".
+L154 "ans = JOptionPane.showConfirmDialog(null, "The file has changed. You want to save it?", "Save file", 0, 2);". : leads to Performance issues: If the 
 
-L165 "throw new EditorSaveException("Cannot write file!");".
+variable is assigned a value that requires a lot of memory, but the data type is not declared, it could lead to performance issues or even crashes.
 
-L224 "JFileChooser dialog = new JFileChooser(System.getProperty("user.home"));".
+
+
+L165 "throw new EditorSaveException("Cannot write file!");". : the code will throw a runtime exception.
+
+L224 "JFileChooser dialog = new JFileChooser(System.getProperty("user.home"));". : This could result in the application crashing or behaving unexpectedly.
 
 L122 "		/*
 
@@ -33,9 +37,9 @@ L122 "		/*
                   
       		move.addActionListener(this);
                   
-      		*/".
+      		*/". :: it make the codebase harder to read. This can make it more difficult for other developers to understand the program's logic.
                   
-L162 "System.out.println(text);".
+L162 "System.out.println(text);". : If the variable text is null, the code will throw a NullPointerException when it is executed.
 
 L192 "System.out.println(text);".
 
